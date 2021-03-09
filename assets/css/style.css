@@ -5,10 +5,6 @@ body {
     background-attachment: scroll;
     height: 100%;
     width: 100%;
-    /* -webkit-animation: AnimationName 24s ease infinite;
-    -moz-animation: AnimationName 24s ease infinite;
-    -o-animation: AnimationName 24s ease infinite;
-    animation: AnimationName 24s ease infinite; */
 }
 
 #navbarAccueil {

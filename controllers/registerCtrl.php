@@ -8,9 +8,13 @@ $errorsArray = array();
 //On ne controle que s'il y a des données envoyées 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+    
+
     // PSEUDO
     // On verifie l'existance et on nettoie
     $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+
+    
 
     //On test si le champ n'est pas vide
     if(!empty($pseudo)){
@@ -40,6 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }else{
         $errorsArray['mail_error'] = 'Le champ est obligatoire';
     }
+   
 
     // PASSWORD et CONFIRM_PASSWORD
     //On test si les champ ne sont pas vides
@@ -57,16 +62,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     } else {
         $errorsArray['password_error'] = 'Les champs password sont obligatoires';
     }
-     
+    var_dump($errorsArray);
     if(empty($errorsArray)){
         $user = new User();
         $user->setPseudo($pseudo);
         $user->setMail($mail);
         $user->setPassword($password);
         $resultCreatedUser = $user->create();
+
+        var_dump($resultCreatedUser);
         if($resultCreatedUser===false){
             $errorsArray['register_error'] = 'Enregistrement impossible (le mail existe déjà ?)';
         }
+        
         if(empty($errorsArray)){
             // Mail d'envoi de vérification du compte
             // mail();

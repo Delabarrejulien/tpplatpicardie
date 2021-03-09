@@ -18,8 +18,8 @@
                     <form action="" method="post">
                         <input type="text" required placeholder="Pseudo" name="pseudo" pattern="[A-Za-z-éèêëàâäôöûüç0-9\-\.]+">
                         <input type="email" required placeholder="Email" name="mail">
-                        <input type="password" id="password" required placeholder="Password" name="password">
-                        <input type="password" id="confirm_password" required placeholder="Password verif" name="confirm_password">
+                        <input type="password" id="password" required placeholder="Mot de passe" name="password">
+                        <input type="password" id="confirm_password" required placeholder="confirmer mot de passe" name="confirm_password">
                         <input type="submit" value="Inscription">
                     </form>
                 </div>
@@ -28,6 +28,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script>
     var password = document.getElementById("password");

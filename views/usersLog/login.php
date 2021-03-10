@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 login-sec">
-                <h2 class="text-center">Connectez-vous</h2>
+                <h2 class="text-center" id >Connectez-vous</h2>
 
                 <div class="error big">
                     <?=$errorsArray['login_error'] ?? ''; ?>
@@ -12,13 +12,13 @@
                 <form action="" method="POST" class="login-form">
                     <div class="form-group">
 
-                        <label for="exampleInputEmail1" class="text-uppercase">mail</label>
+                        <label for="exampleInputEmail1" class="text-uppercase" id="text">mail</label>
                         <input type="email" class="form-control" required placeholder="mail" name="mail">
 
 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1" class="text-uppercase">Mot de passe</label>
+                        <label for="exampleInputPassword1" class="text-uppercase" id="text">Mot de passe</label>
                         <input type="password" class="form-control" id="password" required placeholder="Mot de passe"
                             name="password">
 
@@ -28,9 +28,9 @@
                     <div class="form-check">
                         <label class="form-check-label">
                         
-                            <a href="../../controllers/registerCtrl.php">Pas encore inscrit?</a>
+                            <a href="../../controllers/registerCtrl.php" class="text-danger" id="text">vous souhaitez vous inscrire rapidement ?</a>
                         </label>
-                        <button type="submit" value="Connexion" class="btn btn-login float-right">Connect</button>
+                        <button type="submit" value="Connexion" class="btn btn-login float-right"id="textbox">connection</button>
                     </div>
 
                 </form>

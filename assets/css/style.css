@@ -7,16 +7,27 @@ body {
     width: 100%;
 }
 
-#navbarAccueil {
-    font-size: 40px;
-    color: royalblue;
-}
-
 h1 {
     color: rgb(215, 32, 32);
     text-align: center;
     font-size: 40px;
     font-family: 'inknut antiqua', serif;
+}
+
+h2 {
+    font-size: 40px;
+    font-family: 'inknut antiqua', serif;
+    text-shadow: 1px 1px 2px black;
+}
+
+#text {
+    font-family: 'inknut antiqua', serif;
+}
+
+#textbox {
+    text-shadow: 1px 1px 2px black;
+    font-family: 'inknut antiqua', serif;
+    box-shadow: 1px 1px 2px black;
 }
 
 #navbarSupportedContent ul li a:hover {
@@ -44,10 +55,6 @@ h1 {
     font-size: 24px;
     font-family: 'Inknut Antiqua', serif;
     color: rgb(124, 124, 125);
-}
-
-#caroussel {
-    background-color: darkblue;
 }
 
 #search {
@@ -101,34 +108,35 @@ h1 {
 }
 
 .login-sec .copy-text i {
-    color: #FEB58A;
+    color: #f8e17b;
 }
 
 .login-sec .copy-text a {
-    color: #E36262;
+    color: #f8e17b;
 }
 
 .login-sec h2 {
     margin-bottom: 30px;
     font-weight: 800;
     font-size: 30px;
-    color: #DE6262;
+    color: #f8e17b;
 }
 
 .login-sec h2:after {
     content: " ";
     width: 100px;
     height: 5px;
-    background: #FEB58A;
+    background: #f8e17b;
     display: block;
     margin-top: 20px;
     border-radius: 3px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    box-shadow: 1px 1px 2px black;
 }
 
 .btn-login {
-    background: #DE6262;
+    background: #f8e17b;
     color: #fff;
     font-weight: 600;
 }

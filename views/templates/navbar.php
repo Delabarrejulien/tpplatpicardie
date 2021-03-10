@@ -1,4 +1,4 @@
-<!-- 
+
 <div id="navbar" class="col-12 px-0 mt-6">
 
 <nav class=" navbar navbar-expand-md navbar-black bg-black">
@@ -27,15 +27,24 @@
             <li class="nav-item"><a class="nav-link " href="../../controllers/viewRecipesCtrl.php">Annuaire</a></li>
             <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
             <li class="nav-item"><a class="nav-link " href="../../controllers/registerCtrl.php">Inscription</a></li>
-            <li class="nav-item"><a class="nav-link " href="../../controllers/loginCtrl.php">Connexion</a></li>
+            <?php
+                if(!empty($_SESSION['pseudo'])){
+                    echo '
+                    <li class="nav-item"><a class="nav-link " href="/../controllers/viewProfilCtrl.php?id='.$selectuser->id.'">'.$_SESSION['pseudo'].'</a></li>
+                    <li class="nav-item" class="important"><a class="nav-link " href="/../controllers/signoutCtrl.php">Déconnexion</a></li>';
+                } else {
+                    echo '<li class="nav-item"><a class="nav-link " href="/../controllers/loginCtrl.php">Connexion/inscription</a></li>';
+                }
+                ?>
+            
             <li class="nav-item"><a class="nav-link " href="../../controllers/createRecipeCtrl.php">créer une recette</a></li>
         </ul>
 
     </div>
 </nav>
-</div> -->
+</div>
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col">
             <nav class="navbar navbar-light">
@@ -56,4 +65,4 @@
             </nav>
         </div>
     </div>
-</div>
+</div> -->

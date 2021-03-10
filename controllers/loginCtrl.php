@@ -15,7 +15,7 @@ if(!empty($_POST['password']) && !empty($mail)){
     if($user){
         $_SESSION['id'] = $user->id;
         $_SESSION['pseudo'] = $user->pseudo;
-        header('location: /index.php');
+        header('location: /../controllers/personnalViewCtrl.php');
     } else {
         $errorsArray['login_error'] = 'Votre login ou mot de passe n\'est pas reconnu';
     }

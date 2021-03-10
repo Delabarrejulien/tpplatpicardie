@@ -69,9 +69,12 @@ class User{
     }
 
     // Récupération de toutes les infos d'un user selon un id
-    public function get($id){
+    public static function get($id){
+
+        $pdo = Database::getInstance();
+        
         $sql = 'SELECT * from `user` WHERE `id` = :id;';
-        $stmt = $this->_pdo->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         return ($stmt->fetch());
@@ -88,11 +91,14 @@ class User{
     public function update($id){
         try {
             $sql = 'UPDATE `user` 
-                SET `pseudo` = :pseudo, `mail` = :mail, `password` = :password 
+                SET  `name` = :name,  `firstname` = :firstname, `birthday` = :birthday, `mail` = :mail, `pseudo` = :pseudo, `password` = :password 
                 WHERE `user`.`id` = :id;';
             $stmt = $this->_pdo->prepare($sql);
-            $stmt->bindValue(':pseudo', $this->_pseudo, PDO::PARAM_STR);
+            $stmt->bindValue(':name',$this->_name,PDO::PARAM_STR);
+            $stmt->bindValue(':firstname',$this->_firstname,PDO::PARAM_STR);
+            $stmt->bindValue(':birthday',$this->_birthday,PDO::PARAM_STR);
             $stmt->bindValue(':mail', $this->_mail, PDO::PARAM_STR);
+            $stmt->bindValue(':pseudo', $this->_pseudo, PDO::PARAM_STR);
             $stmt->bindValue(':password', $this->_password, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
             return ($stmt->execute());
@@ -108,6 +114,17 @@ class User{
         $stmt = $this->_pdo->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return ($stmt->execute());
+    }
+
+      // selection d'un user selon un id
+      
+      public function select($id){
+        $sql = 'SELECT `id` from `user` WHERE `id` = :id;';
+        $stmt = $this->_pdo->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return ($stmt->fetch());
     }
 
 }

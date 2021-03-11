@@ -26,11 +26,11 @@
             </li>
             <li class="nav-item"><a class="nav-link " href="../../controllers/viewRecipesCtrl.php">Annuaire</a></li>
             <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
-            <li class="nav-item"><a class="nav-link " href="../../controllers/registerCtrl.php">Inscription</a></li>
+            
             <?php
                 if(!empty($_SESSION['pseudo'])){
                     echo '
-                    <li class="nav-item"><a class="nav-link " href="/../controllers/viewProfilCtrl.php?id='.$selectuser->id.'">'.$_SESSION['pseudo'].'</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/../controllers/viewProfilCtrl.php">'.$_SESSION['pseudo'].'</a></li>
                     <li class="nav-item" class="important"><a class="nav-link " href="/../controllers/signoutCtrl.php">Déconnexion</a></li>';
                 } else {
                     echo '<li class="nav-item"><a class="nav-link " href="/../controllers/loginCtrl.php">Connexion/inscription</a></li>';

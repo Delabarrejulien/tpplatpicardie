@@ -134,11 +134,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($user){
 
         $id = $user->id;
-        $lastname = $user->name;
+        $name = $user->name;
         $firstname = $user->firstname;
-        $birthdate = $user->birthday;
-        $phone = $user->phone;
+        $birthday = $user->birthday;
         $mail = $user->mail;
+        $pseudo = $user->pseudo;
+        $password = $user->password;
+
     }else{
         header('location:/index.php?');
     }
@@ -148,7 +150,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-include(dirname(__FILE__) . '/../views/templates/headerLight.php');
+include(dirname(__FILE__) . '/../views/templates/personnalheader.php');
 
 include(dirname(__FILE__) . '/../views/updateProfil.php');
 

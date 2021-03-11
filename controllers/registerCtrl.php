@@ -53,16 +53,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $confirm_password = $_POST['confirm_password'];
         if($password != $confirm_password){
             $errorsArray['password_error'] = 'Les passwords ne correspondent pas '; 
-        } else {
-            $testRegex = preg_match(REGEXP_PASS,$password);
-            if($testRegex == false){
-                $errorsArray['password_error'] = 'Merci de choisir un mdp valide répondant aux critères suivants (Au moins 8 car, 1 Maj, 1 min, 1chiffre, 1 special Char)';
-            }
         }
+         //else {
+        //     $testRegex = preg_match(REGEXP_PASS,$password);
+        //     if($testRegex == false){
+        //         $errorsArray['password_error'] = 'Merci de choisir un mdp valide répondant aux critères suivants (Au moins 8 car, 1 Maj, 1 min, 1chiffre, 1 special Char)';
+        //     }
+        // }
     } else {
         $errorsArray['password_error'] = 'Les champs password sont obligatoires';
     }
-    var_dump($errorsArray);
+    
     if(empty($errorsArray)){
         $user = new User();
         $user->setPseudo($pseudo);
@@ -70,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $user->setPassword($password);
         $resultCreatedUser = $user->create();
 
-        var_dump($resultCreatedUser);
+       
         if($resultCreatedUser===false){
             $errorsArray['register_error'] = 'Enregistrement impossible (le mail existe déjà ?)';
         }
@@ -81,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Ici on authentifie directement l'utilisateur enregistré
             $_SESSION['id'] = $resultCreatedUser;
             $_SESSION['pseudo'] = $pseudo;
-            header('location: /index.php');
+            header('location: /../controllers/personnalViewCtrl.php');
         }
     }
 }

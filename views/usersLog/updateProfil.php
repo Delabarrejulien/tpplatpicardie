@@ -1,71 +1,60 @@
-<!-- Affichage d'un message d'erreur personnalisé -->
-<?php 
-if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER_SANITIZE_STRING))) {
-    if(!array_key_exists($msgCode, $displayMsg)){
-        $msgCode = 0;
-    }
-    echo '<div class="alert '.$displayMsg[$msgCode]['type'].'">'.$displayMsg[$msgCode]['msg'].'</div>';
-} ?>
-<!-- -------------------------------------------- -->
+<h1>Compléter mon profil...</h1>
+<form action="" method="POST">
+    <fieldset>
+        <br>
+        <br>
+        <?= isset($error1)? $error1: '';?>
+        <div class="container col-8" >
+            <br>
+            <div class="form-group">
+                <label id="text">Nom</label>
+                <input type="text" value="<?= $name ?? '' ?>" class="form-control" title="en toutes lettres" name='name'
+                    id="name" placeholder="Nom" pattern="[a-zA-ZÀ-ÿ\s]{2,20}" required>
 
-        <h1>Formulaire</h1>
-        <form action="" method="POST">
-            <fieldset>
+            </div>
 
-                 <legend>Inscriptions patient</legend>
-                <br>
-                <br>
-                <?= isset($error1)? $error1: '';?>
-                
-                <div class="form-group">
-                <label for="exampleInputEmail1">Last name</label>
-                    <input type="text" class="form-control" title="en toutes lettres" name='name' id="name" 
-                        placeholder="Nom" pattern="[a-zA-ZÀ-ÿ\s]{2,20}" required >
-                
-                </div>
-                
-                <br> 
+            <br>
 
-                  <?= isset($error1)? $error1: '';?>
-               
-                <div class="form-group">
-                <label for="exampleInputEmail1">First name</label>
-                    <input type="text" class="form-control" title="en toutes lettres" name='surname' id="surname" size="20"
-                        placeholder="Prénom" pattern="[a-zA-ZÀ-ÿ\s]{2,20}" required >
-                </div> 
+            <?= isset($error1)? $error1: '';?>
 
-                 <br> 
-                <?= isset($error1)? $error1: '';?> 
-                <div class="form-group">
-                <label for="exampleInputEmail1">Birthday</label>
-                    <input type="date" class="form-control" name='birthday' id="birthday" >
-                </div>
-                
-                <br>
-                <?= isset($error1)? $error1: '';?>
-                
-                <label for="exampleInputEmail1">phone</label>
-                <input type="tel" class="form-control" name='phone' id="phone" placeholder="Téléphone"
-                pattern="(01|02|03|04|05|06|07|08|09)[ .-]?[0-9]{2}[ .-]?[0-9]{2}[ .-]?[0-9]{2}[ .-]?[0-9]{2}" required    >
-                
-                <br>
-                <?= isset($error1)? $error1: '';?>
+            <div class="form-group">
+                <label id="text">Prénom</label>
+                <input type="text" value="<?= $firstname ?? '' ?>" class="form-control" title="en toutes lettres"
+                    name='firstname' id="firstname" size="20" placeholder="Prénom" pattern="[a-zA-ZÀ-ÿ\s]{2,20}"
+                    required>
+            </div>
 
-                <div class="form-group">
-                <label for="exampleInputEmail1">email</label>
-                <input type="email" class="form-control" name='email' id="email" placeholder="E-mail"  >
-                </div>
+            <br>
+            <?= isset($error1)? $error1: '';?>
+            <div class="form-group">
+                <label id="text">Date de naissance</label>
+                <input type="date" value="<?= $birthday ?? '' ?>" class="form-control" name='birthday' id="birthday"
+                    required>
+            </div>
 
-                <?= isset($error1)? $error1: '';?>
-                <br>
-                <br>
+            <br>
+            <?= isset($error1)? $error1: '';?>
+
+            <label id="text">Pseudo</label>
+            <input type="text" value="<?= $pseudo ?? '' ?>" class="form-control" name='pseudo' id="pseudo"
+                placeholder="Pseudo" pattern="[A-Za-z-éèêëàâäôöûüç0-9\-\.]+" required>
+
+            <br>
+            <?= isset($error1)? $error1: '';?>
+
+            <div class="form-group">
+                <label id="text">email</label>
+                <input type="email" value="<?= $mail ?? '' ?>" class="form-control" name='mail' id="mail"
+                    placeholder="E-mail" required>
+            </div>
+
+            <?= isset($error1)? $error1: '';?>
         
-                <input type="submit" value="Valider" />
 
-            </fieldset>
-        </form>
-    </div>
+            <input id=text type="submit" value="Valider" />
+            <br>
+            <br>
 
-
-
-
+        </div>
+    </fieldset>
+</form>

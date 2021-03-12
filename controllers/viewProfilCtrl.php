@@ -3,13 +3,13 @@ session_start();
 
 require_once(dirname(__FILE__) . '/../models/User.php');
 
-// Nettoyage de l'id passé en GET dans l'url
+// definition de l'id par session
 
 $idprofil = $_SESSION['id'];
 
 /*************************************************************/
 
-// Appel à la méthode statique permettant de récupérer toutes les infos d'un patient
+// Appel à la méthode statique permettant de récupérer toutes les infos d'un user
 
 $user = User::get($idprofil);
 

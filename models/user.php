@@ -4,6 +4,9 @@ require_once dirname(__FILE__).'/../utils/Database.php';
 // Déclaration de mon model User
 class User{
 
+    private $_name;
+    private $_firstname;
+    private $_birthday;
     private $_mail;
     private $_pseudo;
     private $_password;
@@ -11,8 +14,28 @@ class User{
     private $_pdo;
 
     // Méthode magique construct, appellée auto à l'instanciation de la classe 
-    public function __construct(){
+    public function __construct($name=NULL, $firstname=NULL, $birthday=NULL, $mail=NULL, $pseudo=NULL, $password=NULL){
+
+        $this->_name = $name;
+        $this->_firstname = $firstname;
+        $this->_birthday = $birthday;
+        $this->_mail = $mail;
+        $this->_pseudo = $pseudo;
+        $this->_password = $password;
+
         $this->_pdo = Database::getInstance();
+    }
+
+    public function setname($name){
+        $this->_name = $name;
+    }
+
+    public function setfirstname($firstname){
+        $this->_firstname = $firstname;
+    }
+
+    public function setbirthday($birthday){
+        $this->_birthday = $birthday;
     }
 
     public function setMail($mail){

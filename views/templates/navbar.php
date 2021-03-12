@@ -1,5 +1,5 @@
 
-<div id="navbar" class="col-12 px-0 mt-6">
+<div id="navbar" class="col-12 m-auto ">
 
 <nav class=" navbar navbar-expand-md navbar-black bg-black">
     <a id="navbarAccueil" class="navbar-brand" href="#"></a>
@@ -44,25 +44,3 @@
 </nav>
 </div>
 
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <nav class="navbar navbar-light">
-                
-                <?php
-                if(!empty($_SESSION['pseudo'])){
-                    echo '
-                        <div class="navbar-brand ml-auto">'.$_SESSION['pseudo'].'</div>
-                        <a href="/controllers/signoutCtrl.php" class="important">Déconnexion</a>
-                        ';
-                } else {
-                    echo '<a class="navbar-brand ml-auto" href="/controllers/loginCtrl.php">Connexion / Inscription</a>';
-                }
-                ?>
-                
-            
-            </a>
-            </nav>
-        </div>
-    </div>
-</div> -->

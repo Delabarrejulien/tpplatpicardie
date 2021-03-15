@@ -49,6 +49,16 @@
             </div>
 
             <?= isset($error1)? $error1: '';?>
+
+            <div class="form-group">
+                <label id="text">password</label>
+                <input type="password" value="<?= $password ?? '' ?>" class="form-control" name='password' id="password"
+                    placeholder="password" required>
+            </div>
+
+            <?= isset($error1)? $error1: '';?>
+        
+
         
 
             <input id=text type="submit" value="Valider" />

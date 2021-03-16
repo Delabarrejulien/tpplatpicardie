@@ -4,7 +4,7 @@
 CREATE DATABASE IF NOT EXISTS `platpicardie` CHARACTER SET 'utf8';
 USE `platpicardie`;
 
-#------------------------------------------------------------
+
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE user(
 CREATE TABLE cooking(
         id          Int  Auto_increment  NOT NULL ,
         name        Varchar (50) NOT NULL ,
-        ingredient  Varchar (20) NOT NULL ,
+        ingredient  Text NOT NULL ,
         description Text NOT NULL ,
         step        Text NOT NULL ,
         categorie   Varchar (20) NOT NULL ,

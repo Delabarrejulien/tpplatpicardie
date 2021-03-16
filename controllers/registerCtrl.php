@@ -54,12 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($password != $confirm_password){
             $errorsArray['password_error'] = 'Les passwords ne correspondent pas '; 
         }
-         //else {
-        //     $testRegex = preg_match(REGEXP_PASS,$password);
-        //     if($testRegex == false){
-        //         $errorsArray['password_error'] = 'Merci de choisir un mdp valide répondant aux critères suivants (Au moins 8 car, 1 Maj, 1 min, 1chiffre, 1 special Char)';
-        //     }
-        // }
     } else {
         $errorsArray['password_error'] = 'Les champs password sont obligatoires';
     }

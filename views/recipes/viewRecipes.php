@@ -1,6 +1,6 @@
 
 
-<h4 class="mb-4">en cuisine...</h4>
+<h1 class="mb-4">En cuisine...</h1>
  
  <div class="card mb-3">
   
@@ -12,7 +12,7 @@
        <p class="card-text"><p><?= $cooking->step?></p>
  
        <p class="card-text">
-          <small class="text-muted text">bon apppétit...</small>
+          <small class="text-muted text">Bon apppétit...</small>
        </p>
     </div>
     <img class="card-img" src="/../assets/img/ficelle-picarde.jpg" alt="la vrai ficelle picarde">

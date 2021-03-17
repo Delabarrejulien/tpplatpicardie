@@ -83,27 +83,7 @@ class Cooking{
 
     }
 
-    // Méthode qui permet de recuperer une recette selon un id session
-    
-
-    // public static function getSession($id){
-        
-    //     $pdo = Database::getInstance();
-
-    //     try{
-    //         $sql = 'SELECT * FROM `cooking` 
-    //                 WHERE `id_user` = :id_user;';
-    //         $sth = $pdo->prepare($sql);
-
-    //         $sth->bindValue(':id_user',$id_user,PDO::PARAM_INT);
-    //         $sth->execute();
-    //         return($sth->fetch());
-    //     }
-    //     catch(PDOException $e){
-    //         return false;
-    //     }
-
-    // }
+  
 
     // Méthode qui permet de lister toutes les recettes 
 
@@ -139,6 +119,37 @@ class Cooking{
         }
 
     }
+
+    
+      //Méthode qui permet de récupérer les recettes d'un utilisateur
+      public static function getAllMyCook($id){
+
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = '    SELECT `cooking`.`id` as `CookingId`, `user`.`id` as `userId`, `user`.*, `cooking`.* 
+                        FROM `cooking` 
+                        INNER JOIN `user`
+                        ON `cooking`.`id_user` = `user`.`id`
+                    
+                        WHERE `user`.`id` = :id;';
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->bindValue(':id',$id,PDO::PARAM_INT);
+            $stmt->execute() ;
+
+            return $stmt->fetchAll();
+        }
+        catch(PDOException $e){
+
+            echo $e;
+            return false;
+        }
+
+    }
+    
+
+    //methode pour compter les recettes
 
     public static function count($s){
         $pdo = Database::getInstance();

@@ -16,14 +16,6 @@
                     <a class="dropdown-item" href="#">Viande, poisson ou légumes</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Découverte</a>
-                <div id="dropMenu" class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Coté terre</a>
-                    <a class="dropdown-item" href="#">Coté mer</a>
-
-                </div>
-            </li>
             <li class="nav-item"><a class="nav-link " href="../../controllers/recipesListCtrl.php">les recettes</a></li>
             <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
             
@@ -31,13 +23,15 @@
                 if(!empty($_SESSION['pseudo'])){
                     echo '
                     <li class="nav-item"><a class="nav-link " href="/../controllers/viewProfilCtrl.php">'.$_SESSION['pseudo'].'</a></li>
-                    <li class="nav-item" class="important"><a class="nav-link " href="/../controllers/signoutCtrl.php">Déconnexion</a></li>';
+                    <li class="nav-item" class="important"><a class="nav-link " href="/../controllers/signoutCtrl.php">Déconnexion</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/../controllers/createRecipeFirstCtrl.php">créer une recette</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/../controllers/viewMyRecipesCtrl.php">Mes recettes</a></li>';
                 } else {
                     echo '<li class="nav-item"><a class="nav-link " href="/../controllers/loginCtrl.php">Connexion/inscription</a></li>';
                 }
                 ?>
             
-            <li class="nav-item"><a class="nav-link " href="/../controllers/createRecipeFirstCtrl.php">créer une recette</a></li>
+            
         </ul>
 
     </div>

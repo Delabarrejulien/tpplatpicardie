@@ -103,7 +103,7 @@ class User{
         return ($stmt->fetch());
     }
 
-    // Récupération de toutes les infos de tous les user
+    // Récupération de toutes les infos de tous les users
     public function getAll($id){
         $sql = 'SELECT * from `user`;';
         $stmt = $this->_pdo->query($sql);

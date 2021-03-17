@@ -1,5 +1,18 @@
 <?php
+session_start();
 
+require_once(dirname(__FILE__) . '/../models/user.php');
+require_once(dirname(__FILE__) . '/../models/cooking.php');
+
+
+
+// Nettoyage de l'id passé en GET dans l'url
+$id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
+
+/*************************************************************/
+
+// Appel à la méthode statique permettant de récupérer toutes les infos d'une recette
+$cooking = Cooking::get($id);
 
 
 

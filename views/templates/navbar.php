@@ -24,7 +24,7 @@
 
                 </div>
             </li>
-            <li class="nav-item"><a class="nav-link " href="../../controllers/viewRecipesCtrl.php">Annuaire</a></li>
+            <li class="nav-item"><a class="nav-link " href="../../controllers/recipesListCtrl.php">les recettes</a></li>
             <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
             
             <?php

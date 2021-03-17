@@ -31,13 +31,15 @@
     include(dirname(__FILE__) . '/navbar.php');
 ?>
 
-    <div class="container m-auto">
+    <div class="container my-5">
 
     <div id="main" class="container-fluid ">
         <div class="row">
 
             <div id="title" class="col-12 mb-0 mx-15 px-0 py-3">
-                <img src="../../assets/img/logoTitle.jpg" class="img-fluid" alt="site de point picardie acceuil">
-
+                <img src="../../assets/img/erreur.jpg" class="img-fluid" alt="site de plat d'picardie acceuil">
+                <div class="m-auto text_center">
+                <a id="text" href="/index.php">retour sur la page principale</a>
+                </div>
 
             </div>

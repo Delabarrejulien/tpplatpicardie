@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $testRegex = preg_match(R_STRLONG,$categorie);
 
         if($testRegex == false){
-            $errorsArray['categorie_error'] = 'Merci de choisir un kuku valide';
+            $errorsArray['categorie_error'] = 'Merci de choisir une categorie valide';
         }
     }else{
         $errorsArray['categorie_error'] = 'Le champ est obligatoire';
@@ -87,20 +87,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // On verifie l'existance et on nettoie
     $step = trim(filter_input(INPUT_POST, 'step', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
-    //On test si le champ n'est pas vide
-    if(!empty($step)){
-        // On test la valeur
-        $testRegex = preg_match(R_STRLONG,$step);
-
-        if($testRegex == false){
-            $errorsArray['step_error'] = 'Merci de kiki un nom valide';
-        }
-    }else{
-        $errorsArray['step_error'] = 'Le champ est obligatoire';
-        
-    }
-    var_dump($step);
-
     var_dump($errorsArray);
 
      // Si il n'y a pas d'erreurs, on enregistre une recette.
@@ -113,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
        
          
          if($result===true){
-             header('location: /../views/templates/greatHeader.php?msgCode=1');
+             header('location: /../views/templates/greatHeader.php?');
          } else {
              // Si l'enregistrement s'est mal passé, on affiche à nouveau le formulaire de création avec un message d'erreur.
              $msgCode = $result;

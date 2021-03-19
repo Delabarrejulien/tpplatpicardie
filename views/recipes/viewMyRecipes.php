@@ -4,9 +4,10 @@
 <thead>
   <tr>
 
-    <th scope="col" class="text">recettes</th>
-    <th scope="col" class="text">catégories</th>
-    <th scope="col" class="text">voir</th>
+    <th scope="col" class="text">Recettes</th>
+    <th scope="col" class="text">Catégories</th>
+    <th scope="col" class="text">Editer</th>
+   
   </tr>
 </thead>
 <tbody>
@@ -23,8 +24,11 @@
       
       
       <td>
-        <a href="/controllers/viewRecipesCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-edit"></i></a>
-        <a href="/controllers/delete-patientCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="fas fa-trash-alt"></i></a> 
+        <a href="/controllers/viewRecipesCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-eye"></i></a>
+        
+        <a href="/controllers/updateMyRecipeCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-edit"></i></a> 
+
+        <a href="/controllers/deleteRecipeCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="fas fa-trash-alt"></i></a> 
       </td>
       </tr>
   <?php } ?>

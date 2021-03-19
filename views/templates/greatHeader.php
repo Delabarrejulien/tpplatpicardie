@@ -26,11 +26,6 @@
 <body>
 
 
-
-<?php
-    include(dirname(__FILE__) . '/navbar.php');
-?>
-
     <div class="container my-5">
 
     <div id="main" class="container-fluid ">

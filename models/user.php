@@ -13,7 +13,7 @@ class User{
 
     private $_pdo;
 
-    // Méthode magique construct, appellée auto à l'instanciation de la classe 
+    // Méthode magique construct, appellée automatiquemment à l'instanciation de la classe 
     public function __construct($name=NULL, $firstname=NULL, $birthday=NULL, $mail=NULL, $pseudo=NULL, $password=NULL){
 
         $this->_name = $name;

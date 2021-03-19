@@ -142,14 +142,37 @@ class Cooking{
         }
         catch(PDOException $e){
 
-            echo $e;
+        
             return false;
         }
 
     }
+
+    //Méthode qui permet de supprimer une recette
+
+
+    public static function delete($id){
+
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'DELETE FROM `cooking`
+                    WHERE `id` = :id;';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':id',$id,PDO::PARAM_INT);
+            $sth->execute();
+    
+        }
+        catch(PDOException $e){
+
+            return $e->getCode();
+        }
+    }
+
+
     
 
-    //methode pour compter les recettes
+    //Méthode  pour compter les recettes
 
     public static function count($s){
         $pdo = Database::getInstance();

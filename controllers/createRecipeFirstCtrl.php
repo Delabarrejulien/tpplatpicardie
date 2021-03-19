@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . '/../models/user.php');
 
 require_once(dirname(__FILE__) . '/../models/cooking.php');
 
-var_dump($_SESSION);
+
 
 $id_user=intval($_SESSION['id']);
 
@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errorsArray['name_error'] = 'Le champ est obligatoire';
         
     }
-    var_dump($name);
+
 
      //description
     // On verifie l'existance et on nettoie
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errorsArray['description_error'] = 'Le champ est obligatoire';
         
     }
-    var_dump($description);
+   
 
      //categorie
     // On verifie l'existance et on nettoie
@@ -74,20 +74,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
     }
 
-    var_dump($categorie);
+
 
          //ingredient
     // On verifie l'existance et on nettoie
     $ingredient = trim(filter_input(INPUT_POST, 'ingredient', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
 
-    var_dump($ingredient);
+  
 
          //ingredient
     // On verifie l'existance et on nettoie
     $step = trim(filter_input(INPUT_POST, 'step', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
-    var_dump($errorsArray);
+
 
      // Si il n'y a pas d'erreurs, on enregistre une recette.
      $cooking = new Cooking($name, $ingredient, $description, $step, $categorie);
@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      if(empty($errorsArray) ){
          $result = $cooking->createCooking($id_user);
 
-         var_dump($result);
+ 
        
          
          if($result===true){

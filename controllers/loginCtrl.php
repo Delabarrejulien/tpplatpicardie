@@ -12,10 +12,17 @@ if(!empty($_POST['password']) && !empty($mail)){
     $password = $_POST['password'];
     $user = new User();
     $user = $user->getUserLogin($mail, $password);
-    if($user){
-        $_SESSION['id'] = $user->id;
-        $_SESSION['pseudo'] = $user->pseudo;
-        header('location: /../controllers/personnalViewCtrl.php');
+    
+    
+        if($user){
+            $_SESSION['id'] = $user->id;
+            $_SESSION['pseudo'] = $user->pseudo;
+            $_SESSION['statut'] = $user->statut;
+            if($_SESSION['statut']==1){
+            header('location: /../views/templates/adminHeader.php');    
+            }else{
+                header('location: /../controllers/personnalViewCtrl.php');    
+            }
     } else {
         $errorsArray['login_error'] = 'Votre login ou mot de passe n\'est pas reconnu';
     }

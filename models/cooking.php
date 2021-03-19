@@ -83,6 +83,26 @@ class Cooking{
 
     }
 
+     // Mise à jour d'une recette selon un id
+     public function updatecook($id){
+        try {
+            $sql = 'UPDATE `cooking` 
+                SET  `name` = :name,  `ingredient` = :ingredient, `description` = :description, `step` = :step, `categorie` = :categorie
+                WHERE `cooking`.`id` = :id;';
+            $stmt = $this->_pdo->prepare($sql);
+            $stmt->bindValue(':name',$this->_name,PDO::PARAM_STR);
+            $stmt->bindValue(':ingredient',$this->_ingredient,PDO::PARAM_STR);
+            $stmt->bindValue(':description',$this->_description,PDO::PARAM_STR);
+            $stmt->bindValue(':step', $this->_step, PDO::PARAM_STR);
+            $stmt->bindValue(':categorie', $this->_categorie, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            return ($stmt->execute());
+        } catch (PDOException $e) {
+            return false;
+        }
+        
+    }
+
   
 
     // Méthode qui permet de lister toutes les recettes 

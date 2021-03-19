@@ -26,7 +26,7 @@
       <td>
         <a href="/controllers/viewRecipesCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-eye"></i></a>
         
-        <a href="/controllers/updateMyRecipeCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-edit"></i></a> 
+        <a href="/controllers/updateRecipeCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="far fa-edit"></i></a> 
 
         <a href="/controllers/deleteRecipeCtrl.php?id=<?=htmlentities($cooking->id)?>"><i class="fas fa-trash-alt"></i></a> 
       </td>

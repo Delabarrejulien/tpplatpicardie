@@ -11,6 +11,10 @@ $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 // Appel à la méthode statique permettant de récupérer toutes les infos d'une recette
 $cooking = Cooking::get($id);
 
+if(!$Cooking){
+    header('location:/../views/templates/badHeader.php');
+}
+
 
 // Récupération de la valeur recherchée et on nettoie
 $s = trim(filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING));

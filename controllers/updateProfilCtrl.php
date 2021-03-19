@@ -18,7 +18,7 @@ $profil = $user->get($id);
 
 //On ne controle que s'il y a des données envoyées 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-var_dump($_POST);
+
 
 // On verifie l'existance et on nettoie
     $name=trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
@@ -112,7 +112,7 @@ var_dump($_POST);
 
  // ***************************************************************
 
-    // Si il n'y a pas d'erreurs, on met à jour le patient.
+    // Si il n'y a pas d'erreurs, on met à jour l' utilisateur.
     if(empty($errorsArray) ){    
         $user = new User($name, $firstname, $birthday, $mail, $pseudo, $password);
 
@@ -127,7 +127,7 @@ var_dump($_POST);
     }
 } else {
     $user= user::get($id);
-    // Si le patient n'existe pas, on redirige vers la liste complète avec un code erreur
+    // Si l'user n'existe pas, on redirige vers la liste complète avec un code erreur
     if($user){
         $id = $user->id;
         $name = $user->name;
@@ -138,7 +138,7 @@ var_dump($_POST);
         $password = $user->password;
         
     } else {
-        header('location: /controllers/list-patientCtrl.php?msgCode=3');
+        header('location: /../views/templates/badHeaderCtrl.php');
     }
     
 }

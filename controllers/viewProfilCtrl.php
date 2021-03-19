@@ -7,6 +7,9 @@ require_once(dirname(__FILE__) . '/../models/User.php');
 
 $idprofil = $_SESSION['id'];
 
+if(!$idprofil){
+    header('location:/../views/templates/badHeader.php');
+}
 /*************************************************************/
 
 // Appel à la méthode statique permettant de récupérer toutes les infos d'un user

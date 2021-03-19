@@ -1,4 +1,4 @@
-<h1>Créer une recette...</h1>
+<h1>Changer une recette...</h1>
 <form action="" method="POST">
     <fieldset>
         <br>
@@ -20,22 +20,22 @@
                 <br>
                 <select class="form-select text" aria-label="Default select example" name="categorie" id="categorie">
                     <option  selected required>Catégorie</option>
-                    <option   value="Viande">Viande</option>
-                    <option   value="Poisson">Poisson</option>
-                    <option   value="Déssert">Déssert</option>
+                    <option   value="<?= $categorie ?? '' ?>">Viande</option>
+                    <option   value="<?= $categorie ?? '' ?>">Poisson</option>
+                    <option   value="<?= $categorie ?? '' ?>">Déssert</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label id="text">Description courte du plat</label>
-                <input type="textearea" class="form-control" name='description' id="description"
+                <input type="textearea" class="form-control" value="<?= $description ?? '' ?>" name='description' id="description"
                     placeholder="une courte description " minlength="3" maxlenght="100"
                     pattern="[A-Za-z-éèêëàâäôöûüç0-9\-\.\,\']+" required>
             </div>
 
             <div class="form-group">
                 <label for="form_message" class="text">les ingrédients</label>
-                <input type='textarea' id="ingredient" name="ingredient" class="form-control"
+                <input type='textarea' value="<?= $ingredient ?? '' ?>" id="ingredient" name="ingredient"  class="form-control"
                     placeholder="inscrivez un ingredient suivie de la quantité puis passer a la ligne avant d'en reinscrire un nouveau. " maxlenght="300" rows="4"
                     pattern="[A-Za-z-éèêëàâäôöûüç0-9\-\.\,\']+" required></textarea>
                 <div class="help-block with-errors"></div>
@@ -46,7 +46,7 @@
 
             <div class="form-group">
                 <label for="form_message" class="text">Etapes...</label>
-                <input type='textarea' id="step" name="step" class="form-control"
+                <input type ='textarea' value="<?= $step ?? '' ?>" id="step" name="step" class="form-control"
                     placeholder="D'écrivez les etpes de la recettes et les temps de cuisons" maxlenght="300" rows="4"
                     pattern="[A-Za-z-éèêëàâäôöûüç0-9\-\.\,\']+" required></textarea>
                 <div class="help-block with-errors"></div>

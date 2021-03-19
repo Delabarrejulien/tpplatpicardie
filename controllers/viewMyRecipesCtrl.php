@@ -12,6 +12,10 @@ $id = $_SESSION['id'];
 
 $allCooking = Cooking::getAllMyCook($id);
 
+if(!$allCooking){
+    header('location:/../views/templates/badHeader.php');
+}
+
 
 
 
